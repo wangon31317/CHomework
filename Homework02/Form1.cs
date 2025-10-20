@@ -69,6 +69,28 @@ namespace Homework02
             }
         }
 
+        private void buttonBackspace_Click(object sender, EventArgs e)
+        {
+            if (textBoxValue.Text.Length > 0)
+            {
+                textBoxValue.Text = textBoxValue.Text.Substring(0, textBoxValue.Text.Length - 1);
+            }
+        }
 
+        private void buttonPosNeg_Click(object sender, EventArgs e)
+        {
+            bool isDouble = double.TryParse(textBoxValue.Text, out double value);
+            if (isDouble == false)
+            {
+                MessageBox.Show("請輸入正確的數字");
+                return;
+            }
+            else
+            {
+                value = -value;
+                textBoxValue.Text = value.ToString();
+            }
+
+        }
     }
 }

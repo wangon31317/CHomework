@@ -46,6 +46,8 @@
             buttonConvert = new Button();
             buttonClear = new Button();
             labelResult = new Label();
+            buttonBackspace = new Button();
+            buttonPosNeg = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -260,11 +262,37 @@
             labelResult.TabIndex = 15;
             labelResult.Text = "結果：";
             // 
+            // buttonBackspace
+            // 
+            buttonBackspace.BackColor = SystemColors.ActiveBorder;
+            buttonBackspace.Font = new Font("Microsoft JhengHei UI", 16F);
+            buttonBackspace.Location = new Point(965, 139);
+            buttonBackspace.Name = "buttonBackspace";
+            buttonBackspace.Size = new Size(64, 72);
+            buttonBackspace.TabIndex = 16;
+            buttonBackspace.Text = "⌫";
+            buttonBackspace.UseVisualStyleBackColor = false;
+            buttonBackspace.Click += buttonBackspace_Click;
+            // 
+            // buttonPosNeg
+            // 
+            buttonPosNeg.BackColor = SystemColors.ActiveBorder;
+            buttonPosNeg.Font = new Font("Microsoft JhengHei UI", 16F);
+            buttonPosNeg.Location = new Point(537, 298);
+            buttonPosNeg.Name = "buttonPosNeg";
+            buttonPosNeg.Size = new Size(64, 72);
+            buttonPosNeg.TabIndex = 17;
+            buttonPosNeg.Text = "±";
+            buttonPosNeg.UseVisualStyleBackColor = false;
+            buttonPosNeg.Click += buttonPosNeg_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(11F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1109, 479);
+            Controls.Add(buttonPosNeg);
+            Controls.Add(buttonBackspace);
             Controls.Add(labelResult);
             Controls.Add(buttonClear);
             Controls.Add(buttonConvert);
@@ -286,7 +314,6 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "溫度轉換器";
-
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -313,5 +340,7 @@
         private Button buttonConvert;
         private Button buttonClear;
         private Label labelResult;
+        private Button buttonBackspace;
+        private Button buttonPosNeg;
     }
 }
