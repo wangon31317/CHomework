@@ -13,10 +13,10 @@ namespace Homework05
         {
             DateTime birthday = dateTimePicker1.Value;
             _userinfo.Zodiac = GetZodiac(birthday);
-            _userinfo.LifeNumber = GetLifeNumber(birthday);
-            string lifeNumberInfo = GetLifeNumberInfo();
+            _userinfo.Numerology = GetNumerology(birthday);
+            string lifeNumberInfo = GetNumerologyInfo();
             textBoxInfo.Text = $"琍畒琌 {_userinfo.Zodiac}" + Environment.NewLine +
-                               $"ネ㏑艶计琌 {_userinfo.LifeNumber}" + Environment.NewLine + 
+                               $"ネ㏑艶计琌 {_userinfo.Numerology}" + Environment.NewLine + 
                                $"{lifeNumberInfo}";
         }
         public string GetZodiac(DateTime birthday)
@@ -72,7 +72,7 @@ namespace Homework05
 
         }
 
-        public string GetLifeNumber(DateTime birthday)
+        public string GetNumerology(DateTime birthday)
         {
             string birthdaystr = birthday.ToString("yyyyMMdd");
 
@@ -87,7 +87,7 @@ namespace Homework05
 
         }
 
-        public string GetLifeNumberInfo()
+        public string GetNumerologyInfo()
         {
             string[] lines = File.ReadAllLines("ネ㏑艶计.txt");
 
@@ -99,7 +99,7 @@ namespace Homework05
                 nextZodiacIndex = lines.Length;
             }
 
-            string searchKey = $"ネ㏑艶计{_userinfo.LifeNumber}";
+            string searchKey = $"ネ㏑艶计{_userinfo.Numerology}";
             string result =
                 lines
                 .Skip(zodiacIndex)

@@ -9,6 +9,6 @@ namespace Homework05
     internal class UserInfo
     {
         public string Zodiac {  get; set; }
-        public string LifeNumber { get; set; }
+        public string Numerology { get; set; }
     }
 }
